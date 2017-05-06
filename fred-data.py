@@ -17,14 +17,15 @@ TIMEOUT = 10
 app = Flask(__name__)
 
 
-@app.route('/fred/<string:sector>/series', methods=['GET'])
-def get_fred_series_by_sector(sector):
+@app.route('/fred/series/search', methods=['GET'])
+def get_fred_series_by_sector():
 
+    search_text = request.args.get('text', '')
     limit  = request.args.get('limit', 1000)
     offset = request.args.get('offset', 0)
 
     payload = {
-        "search_text": sector,
+        "search_text": search_text,
         "api_key": '686499b1e93cfa261ddef9faa553f4b9',
         "file_type": 'json',
         "limit": limit,
