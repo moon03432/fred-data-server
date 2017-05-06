@@ -1,1 +1,1 @@
-nohup python ./ws.py
+nohup python ./fred-data.py
