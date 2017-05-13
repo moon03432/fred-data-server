@@ -47,7 +47,7 @@ def get_fred_series(id):
         "api_key": '686499b1e93cfa261ddef9faa553f4b9',
         "file_type": 'json'
     }
-    url = 'https://api.stlouisfed.org/fred/series'
+    url = 'https://api.stlouisfed.org/fred/series/observations'
     response = requests.get(url, params=payload, verify=False)
 
     return response.text
