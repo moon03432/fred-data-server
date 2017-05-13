@@ -16,6 +16,10 @@ TIMEOUT = 10
 
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def test_connectivity():
+
+    return "success"
 
 @app.route('/fred/series/search', methods=['GET'])
 def get_fred_series_by_sector():
